@@ -1,0 +1,22 @@
+{
+  "name": "personal-ai-agents",
+  "version": "0.1.0-beta.1",
+  "private": true,
+  "description": "Agentes pessoais portáteis em Markdown com avaliação comportamental reproduzível.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "test:eval-spec": "node --test tests/evals/*.test.cjs",
+    "preeval:behavior": "node tests/evals/check-env.cjs",
+    "eval:behavior": "promptfoo eval -c tests/evals/promptfooconfig.cjs --no-cache --no-share --output tests/results/eval-results.json --output tests/results/eval-report.html --output tests/results/eval-results.junit.xml"
+  },
+  "devDependencies": {
+    "promptfoo": "0.122.0"
+  },
+  "overrides": {
+    "adm-zip": "0.6.0",
+    "sharp": "0.35.0"
+  }
+}

@@ -31,6 +31,11 @@ Relatos de comportamento devem informar, quando possível, agente e versão, fer
 modelo, data, cenário sintético e resposta observada. Não anexe `.private/`, exames,
 extratos, declarações, diários ou conversas reais.
 
+Relatórios automáticos incluem prompts e respostas. Use somente casos sintéticos, mantenha
+o compartilhamento remoto desabilitado e revise JSON, HTML ou JUnit antes de publicar ou
+anexar o artefato a uma release. Chaves de API devem existir apenas no ambiente local ou
+nos secrets do GitHub Actions.
+
 ## Proteção de dados pessoais
 
 `.private/` e `sessions/private/` são ignorados pelo Git, mas permanecem arquivos em

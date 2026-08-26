@@ -44,6 +44,16 @@ Com PowerShell 7 em qualquer plataforma:
 pwsh -NoProfile -File ./tests/validate.ps1
 ```
 
+Para validar o parser e a cobertura da especificação comportamental sem consumir API:
+
+```powershell
+node --test tests/evals/*.test.cjs
+```
+
+Mudanças de comportamento devem seguir [[docs/qualidade-e-evals]]. A execução com um
+modelo é necessária quando a alteração puder afetar critérios críticos; use somente dados
+sintéticos e informe target, grader e número de repetições.
+
 O pull request deve passar na matriz de CI e registrar qualquer teste comportamental
 manual relevante. Respostas de modelos podem variar; repita falhas antes de aumentar a
 complexidade das instruções.

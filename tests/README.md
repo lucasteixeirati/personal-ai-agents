@@ -28,6 +28,20 @@ qualidade por si mesmos.
 6. Registre uma frase de evidência para falha ou resultado limítrofe.
 7. Repita falhas uma segunda vez antes de alterar o agente.
 
+## Automação
+
+`validate.ps1` verifica o contrato estático. Os testes em `evals/` confirmam que os casos
+podem ser lidos como especificação executável, sem chamar uma IA:
+
+```powershell
+node --test tests/evals/*.test.cjs
+```
+
+A avaliação comportamental opcional executa os 34 cenários contra um target e usa rubricas
+semânticas para cada critério. Os críticos exigem 100% e a qualidade exige pelo menos 80%.
+Configuração, privacidade, comandos e limites estão em
+[[../docs/qualidade-e-evals]].
+
 ## Casos
 
 - [[orquestrador-pessoal.cases]]
@@ -47,4 +61,6 @@ publicar nova versão do conjunto, execute todos os casos e registre o resultado
 
 Resultado de referência dos sete especialistas: [[auditoria-inicial-2026-08-19]]. O
 relato de uso do coordenador está em [[observacao-orquestrador-2026-08-25]]. O
-orquestrador permanece `draft` até concluir sua própria rodada exploratória reproduzível.
+primeiro smoke automatizado e a calibração humana do grader estão em
+[[evidencia-smoke-orq-06-2026-08-26]]. O orquestrador permanece `draft` até concluir sua
+própria rodada reproduzível.

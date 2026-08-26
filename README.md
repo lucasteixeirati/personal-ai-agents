@@ -1,5 +1,7 @@
 # Personal AI Agents
 
+[![Validate repository](https://github.com/lucasteixeirati/personal-ai-agents/actions/workflows/validate.yml/badge.svg)](https://github.com/lucasteixeirati/personal-ai-agents/actions/workflows/validate.yml)
+
 Biblioteca pessoal de agentes em Markdown, projetada para funcionar como vault do
 Obsidian e como fonte portátil de instruções para diferentes ferramentas de IA.
 
@@ -129,15 +131,22 @@ pwsh -NoProfile -File ./tests/validate.ps1
 ```
 
 O workflow `.github/workflows/validate.yml` executa a mesma validação nos três sistemas
-a cada push e pull request.
+a cada push e pull request. Ele também confirma, sem chamar uma IA, que os 34 cenários e
+seus critérios podem ser convertidos para a suíte automatizada.
+
+A avaliação comportamental usa os próprios arquivos Markdown como fonte, aceita provedores
+configuráveis e gera relatórios JSON, HTML e JUnit. Ela é opcional porque consome API e
+suas respostas variam conforme modelo e runtime. Veja [[docs/qualidade-e-evals]] para
+executar localmente ou pelo workflow manual `Behavioral evaluation`.
 
 A rodada exploratória mais recente cobre os sete especialistas e seus 28 cenários. O
-orquestrador está em `active`, com seis cenários adicionais testados em rodada exploratória.
-As versões podem ser diferentes porque cada agente evolui e é testado de forma independente.
+orquestrador possui seis cenários e observações positivas de uso, mas permanece em `draft`
+até que uma rodada com runtime, modelo e respostas arquivadas conclua sua evidência. As
+versões podem ser diferentes porque cada agente evolui e é testado de forma independente.
 
 ## Estado
 
-Versão inicial com um coordenador em `active` e sete especialistas ativos: finanças
+Versão beta com um coordenador em `draft` e sete especialistas ativos: finanças
 pessoais, planejamento tributário para IRPF, apoio reflexivo, performance, nutrição e
 musculação, inglês e carreira em Quality Engineering. Eles são pontos de partida
 incrementais, não substitutos de profissionais habilitados.

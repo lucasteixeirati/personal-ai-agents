@@ -5,3 +5,6 @@
 sessions/private/
 *.tmp
 *.log
+node_modules/
+.promptfoo/
+tests/results/

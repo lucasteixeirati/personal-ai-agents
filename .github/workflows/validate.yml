@@ -23,3 +23,11 @@ jobs:
       - name: Validate agents, cases and links
         shell: pwsh
         run: ./tests/validate.ps1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Test behavioral evaluation specification
+        run: node --test tests/evals/*.test.cjs

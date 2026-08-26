@@ -13,7 +13,8 @@ Use esta lista antes de tornar o repositório público e antes de cada divulgaç
 
 - [x] escolher e adicionar a licença MIT em `LICENSE`;
 - [ ] revisar todo o histórico do Git em busca de dados pessoais ou segredos;
-- [x] executar e registrar os seis casos do orquestrador na ferramenta de referência;
+- [x] executar os seis casos do orquestrador na ferramenta de referência;
+- [ ] arquivar runtime, modelo, respostas e decisão por critério dos seis casos;
 - [x] confirmar que a matriz do GitHub Actions passa em Windows, Linux e macOS;
 - [x] habilitar o relato privado de vulnerabilidades no GitHub;
 - [x] revisar README, limites profissionais e guia de dados privados como uma pessoa nova.
@@ -34,6 +35,7 @@ Use esta lista antes de tornar o repositório público e antes de cada divulgaç
 - [ ] definir uma versão do produto separada das versões individuais dos agentes;
 - [ ] criar tag e release de prévia enquanto o orquestrador permanecer em `draft`;
 - [ ] resumir capacidades, ferramentas testadas, limitações e riscos conhecidos;
+- [ ] executar o workflow comportamental e anexar seus artefatos à release;
 - [ ] anexar ou apontar instruções claras para baixar via ZIP ou clonar com Git;
 - [ ] informar que `.private/` nunca deve ser enviado ao GitHub;
 - [ ] oferecer um caminho curto para feedback com exemplos sintéticos.

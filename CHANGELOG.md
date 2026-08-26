@@ -2,6 +2,17 @@
 
 Este arquivo registra mudanças relevantes para quem usa o projeto.
 
+## Não lançado
+
+### Qualidade
+
+- casos Markdown passam a alimentar uma avaliação comportamental reproduzível;
+- parser e cobertura dos 34 cenários são testados automaticamente sem consumir API;
+- workflow manual permite escolher target, grader e repetições;
+- relatórios JSON, HTML e JUnit podem ser anexados como evidência de uma execução;
+- smoke de `ORQ-06` registra um falso positivo e a calibração correspondente do grader;
+- metodologia, limites e proteção dos resultados estão documentados.
+
 ## 0.1.0-beta.1 — 2026-08-26
 
 Primeira versão pública para testes.

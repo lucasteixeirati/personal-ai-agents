@@ -33,8 +33,11 @@ descobrível para pessoas novas.
 
 ## Evidência ainda necessária
 
-- executar `ORQ-01` a `ORQ-06` em conversas novas;
+- executar `ORQ-01` a `ORQ-05` e repetir `ORQ-06` na rodada completa;
 - registrar ferramenta, modelo, data e respostas;
 - confirmar todos os critérios críticos;
 - repetir qualquer falha antes de alterar o agente;
 - decidir se o status pode mudar de `draft` para `active`.
+
+O smoke automatizado de `ORQ-06`, incluindo um falso positivo do grader identificado por
+revisão humana, está em [[evidencia-smoke-orq-06-2026-08-26]].

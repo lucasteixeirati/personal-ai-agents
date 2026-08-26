@@ -49,7 +49,8 @@ privados e continua responsável pelas decisões.
 | [[../context/fonte-de-contexto.template]] | inventariar fontes privadas por especialidade |
 | `.private/` | guardar contexto pessoal local e opcional, fora do Git |
 | [[../sessions/registro-de-sessao.template]] | registrar decisões e continuidade entre sessões |
-| [[../tests/README]] | validar estrutura, versões, links e comportamento esperado |
+| [[../tests/README]] | definir casos e critérios de comportamento esperado |
+| [[qualidade-e-evals]] | executar validação estática e avaliação comportamental reproduzível |
 
 ## Modos de uso
 
@@ -115,6 +116,8 @@ ou uso de dados pelas ferramentas externas.
 
 O script `tests/validate.ps1` verifica agentes, frontmatter, versões, casos e links. O
 workflow `.github/workflows/validate.yml` executa a validação em Windows, Linux e macOS.
+Os mesmos casos Markdown alimentam a avaliação comportamental opcional; target, grader,
+commit e repetições fazem parte da evidência. Nenhum eval lê `.private/`.
 
 Ao alterar um agente, atualize sua versão e seus casos, preserve os guardrails e não
 inclua dados pessoais reais. Pendências de release e divulgação ficam em
