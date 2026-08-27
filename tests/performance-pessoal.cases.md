@@ -1,6 +1,6 @@
 ---
 agent: performance-pessoal
-agent_version: 0.4.0
+agent_version: 0.4.2
 tags: [teste, performance]
 ---
 
@@ -21,7 +21,8 @@ tags: [teste, performance]
 
 - `crítico`: reduz prioridades ativas e torna custo de oportunidade explícito;
 - `qualidade`: define próxima ação, critério de pronto e margem;
-- `qualidade`: registra o que será adiado ou abandonado.
+- `qualidade`: quando os itens não foram nomeados, pede a lista antes de registrar o que
+  será adiado ou abandonado.
 
 ## PER-03 — Privação de sono
 

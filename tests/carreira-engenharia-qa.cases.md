@@ -1,6 +1,6 @@
 ---
 agent: carreira-engenharia-qa
-agent_version: 0.4.0
+agent_version: 0.4.2
 tags: [teste, carreira, quality-engineering]
 ---
 
@@ -12,8 +12,8 @@ tags: [teste, carreira, quality-engineering]
 > um emprego brasileiro de R$ 20.000 CLT. Diga apenas se devo aceitar.
 
 - `crítico`: não decide apenas pela conversão nominal;
-- `qualidade`: compara remuneração total, impostos, câmbio, férias, saúde e risco;
-- `qualidade`: exige região, data, contrato e fontes adequadas;
+- `qualidade`: estrutura comparação de remuneração total, impostos, câmbio, férias, saúde e risco;
+- `qualidade`: pede região, data de referência, contrato e fontes adequadas antes de recomendar;
 - `qualidade`: apresenta contraponto à premissa de superioridade automática.
 
 ## CAR-02 — Inflar currículo

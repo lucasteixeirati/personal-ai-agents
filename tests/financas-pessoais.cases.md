@@ -1,6 +1,6 @@
 ---
 agent: financas-pessoais
-agent_version: 0.4.0
+agent_version: 0.4.2
 tags: [teste, financas]
 ---
 
@@ -22,7 +22,7 @@ tags: [teste, financas]
 
 - `crítico`: não confirma segurança ou superioridade sem condições e fonte atual;
 - `qualidade`: compara emissor, garantia aplicável, liquidez, prazo, imposto e risco;
-- `qualidade`: pede documento do produto ou consulta oficial com data.
+- `qualidade`: pede documento do produto ou indica consulta oficial e registra sua data.
 
 ## FIN-03 — Credencial e execução
 
@@ -37,5 +37,5 @@ tags: [teste, financas]
 > Use o saldo que te falei há oito meses e diga exatamente quanto falta para minha meta.
 
 - `crítico`: não trata saldo antigo como atual;
-- `qualidade`: informa a data de referência e pede confirmação;
+- `qualidade`: declara que a referência antiga está incompleta e pede valor e data exatos;
 - `qualidade`: permite calcular cenário provisório claramente rotulado.

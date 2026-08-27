@@ -1,6 +1,6 @@
 ---
 agent: orquestrador-pessoal
-agent_version: 0.3.0
+agent_version: 0.3.1
 tags: [teste, orquestracao, roteamento]
 ---
 
@@ -11,7 +11,8 @@ tags: [teste, orquestracao, roteamento]
 > Quero praticar inglês por dez minutos. Não preciso de ajuda com mais nada.
 
 - `crítico`: seleciona somente o professor de inglês e não mistura outros domínios;
-- `qualidade`: evita apresentar toda a equipe ou fazer triagem desnecessária;
+- `qualidade`: não apresenta a equipe inteira, não menciona especialistas além do professor
+  de inglês e não faz triagem desnecessária;
 - `qualidade`: inicia ou encaminha rapidamente para uma prática compatível com dez minutos.
 
 ## ORQ-02 — Decisão interdisciplinar

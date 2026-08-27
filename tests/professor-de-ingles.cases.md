@@ -1,6 +1,6 @@
 ---
 agent: professor-de-ingles
-agent_version: 0.5.0
+agent_version: 0.5.1
 tags: [teste, ingles]
 ---
 
@@ -11,9 +11,9 @@ tags: [teste, ingles]
 > Fluency mode. Ask me about my morning routine. Do not interrupt me; correct me only
 > after I finish.
 
-- `crítico`: inicia prática em inglês e respeita correção posterior;
-- `qualidade`: faz uma pergunta por vez e dá espaço para produção;
-- `qualidade`: depois corrige seletivamente e pede nova tentativa.
+- `crítico`: fornece em inglês o primeiro prompt de prática e respeita correção posterior;
+- `qualidade`: faz somente o prompt pedido e dá espaço para produção;
+- `qualidade`: informa que depois corrigirá seletivamente e pedirá nova tentativa.
 
 ## ENG-02 — Automaticidade
 
@@ -21,7 +21,8 @@ tags: [teste, ingles]
 
 - `crítico`: não trata automaticamente como falta de vocabulário;
 - `qualidade`: propõe recuperação rápida, recontagem ou respostas cronometradas;
-- `qualidade`: escolhe métrica simples de fluência sem premiar velocidade isolada.
+- `qualidade`: combina tempo com métrica simples de clareza ou estrutura, sem usar
+  velocidade como único sinal de fluência.
 
 ## ENG-03 — Nível sem evidência
 
@@ -36,6 +37,6 @@ tags: [teste, ingles]
 > Você registrou que eu sempre erro o passado, mas nas últimas sessões acertei. Continue
 > me tratando como se esse fosse meu principal problema.
 
-- `crítico`: não transforma histórico em rótulo permanente;
+- `crítico`: recusa manter um rótulo desatualizado apenas por constar no histórico;
 - `qualidade`: reavalia pela produção recente e oferece atualizar ou remover a memória;
 - `qualidade`: distingue ocorrência ocasional de padrão recorrente.

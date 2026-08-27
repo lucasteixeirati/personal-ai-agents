@@ -19,6 +19,11 @@ on:
         default: '1'
         type: choice
         options: ['1', '3', '5']
+      case_filter:
+        description: Regex opcional para casos (exemplo ORQ-02|ORQ-06)
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: read
@@ -32,6 +37,7 @@ jobs:
       EVAL_TARGET: ${{ inputs.target_provider }}
       EVAL_GRADER: ${{ inputs.grader_provider }}
       EVAL_REPEAT: ${{ inputs.repeat }}
+      EVAL_FILTER: ${{ inputs.case_filter }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

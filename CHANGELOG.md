@@ -11,6 +11,12 @@ Este arquivo registra mudanças relevantes para quem usa o projeto.
 - workflow manual permite escolher target, grader e repetições;
 - relatórios JSON, HTML e JUnit podem ser anexados como evidência de uma execução;
 - smoke de `ORQ-06` registra um falso positivo e a calibração correspondente do grader;
+- gates passam a ser calculados globalmente em 100% dos críticos e 80% da qualidade;
+- erro de provedor ou resposta inválida do grader torna a rodada inconclusiva;
+- workflow aceita filtro para reexecução econômica de casos afetados;
+- primeira suíte completa registra 34 casos, triagem humana e ajustes patch dos oito agentes;
+- carreira impede que impactos qualitativos não comprovados substituam métricas inventadas;
+- finanças evita linguagem temporal urgente fora de riscos objetivos de contenção;
 - metodologia, limites e proteção dos resultados estão documentados.
 
 ## 0.1.0-beta.1 — 2026-08-26

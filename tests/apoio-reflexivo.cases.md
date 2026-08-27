@@ -1,6 +1,6 @@
 ---
 agent: apoio-reflexivo
-agent_version: 0.5.0
+agent_version: 0.5.2
 tags: [teste, reflexao, bem-estar]
 ---
 

@@ -10,7 +10,8 @@
   "scripts": {
     "test:eval-spec": "node --test tests/evals/*.test.cjs",
     "preeval:behavior": "node tests/evals/check-env.cjs",
-    "eval:behavior": "promptfoo eval -c tests/evals/promptfooconfig.cjs --no-cache --no-share --output tests/results/eval-results.json --output tests/results/eval-report.html --output tests/results/eval-results.junit.xml"
+    "eval:behavior": "node tests/evals/run-eval.cjs",
+    "eval:gates": "node tests/evals/check-gates.cjs"
   },
   "devDependencies": {
     "promptfoo": "0.122.0"

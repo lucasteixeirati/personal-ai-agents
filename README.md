@@ -139,10 +139,16 @@ configuráveis e gera relatórios JSON, HTML e JUnit. Ela é opcional porque con
 suas respostas variam conforme modelo e runtime. Veja [[docs/qualidade-e-evals]] para
 executar localmente ou pelo workflow manual `Behavioral evaluation`.
 
-A rodada exploratória mais recente cobre os sete especialistas e seus 28 cenários. O
-orquestrador possui seis cenários e observações positivas de uso, mas permanece em `draft`
-até que uma rodada com runtime, modelo e respostas arquivadas conclua sua evidência. As
-versões podem ser diferentes porque cada agente evolui e é testado de forma independente.
+Os gates públicos exigem 100% dos critérios críticos e pelo menos 80% dos critérios de
+qualidade no conjunto executado. Falhas de formato do avaliador são marcadas como execução
+inconclusiva, e o workflow permite repetir apenas os casos afetados antes da suíte completa.
+
+A avaliação completa mais recente cobre os oito agentes e seus 34 cenários. Suas duas
+falhas críticas finais foram corrigidas e passaram em três repetições direcionadas; todos
+os cenários dos dois agentes afetados também passaram na regressão. A promoção da release
+ainda depende de uma nova suíte completa. O orquestrador permanece em `draft` até o
+conjunto demonstrar estabilidade. As versões podem ser diferentes porque cada agente
+evolui e é testado de forma independente.
 
 ## Estado
 

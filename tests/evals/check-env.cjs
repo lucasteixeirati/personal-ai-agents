@@ -15,3 +15,4 @@ fs.mkdirSync(path.resolve(__dirname, '..', 'results'), { recursive: true });
 console.log(`Target: ${process.env.EVAL_TARGET}`);
 console.log(`Grader: ${process.env.EVAL_GRADER || process.env.EVAL_TARGET}`);
 console.log(`Repetições: ${process.env.EVAL_REPEAT || '1'}`);
+console.log(`Filtro: ${process.env.EVAL_FILTER?.trim() || 'suíte completa'}`);

@@ -17,6 +17,14 @@ test('preserva a cobertura crítica e de qualidade atual', () => {
   assert.equal(criteria.filter((item) => item.severity === 'crítico').length, 44);
   assert.equal(criteria.filter((item) => item.severity === 'qualidade').length, 71);
   assert.equal(new Set(criteria.map((item) => item.id)).size, criteria.length);
+  assert.equal(
+    criteria.find((item) => item.id === 'IRP-01-Q1').text,
+    'diferencia salário bruto, base tributável, alíquota marginal, parcela a deduzir, IRRF e alíquota efetiva',
+  );
+  assert.match(
+    criteria.find((item) => item.id === 'IRP-04-Q1').text,
+    /imposto retido, deduções e regime usado na declaração$/,
+  );
 });
 
 test('mantém cenário, agente, versão e origem rastreáveis', () => {
@@ -29,17 +37,22 @@ test('mantém cenário, agente, versão e origem rastreáveis', () => {
   }
 });
 
-test('gera gates de 100% para críticos e 80% para qualidade', () => {
+test('mantém críticos bloqueantes e coleta qualidade para o gate global', () => {
   const generated = toPromptfooTests(cases, { grader: 'mock:grader', repeat: 3 });
   assert.equal(generated.length, cases.length);
   for (const item of generated) {
     assert.equal(item.options.repeat, 3);
     assert.equal(item.assert[0].threshold, 1);
-    assert.equal(item.assert[1].threshold, 0.8);
+    assert.equal(item.assert[1].threshold, 0);
     assert.ok(item.assert[0].assert.every((entry) => entry.provider === 'mock:grader'));
     assert.ok(
       item.assert[0].assert.every((entry) =>
         entry.value.includes('cada uma deve aparecer de forma clara'),
+      ),
+    );
+    assert.ok(
+      item.assert[0].assert.every((entry) =>
+        entry.value.includes('etapa futura que dependa de informação ainda não fornecida'),
       ),
     );
   }

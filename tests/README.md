@@ -14,9 +14,9 @@ um cenário por conversa nova, usando somente o agente indicado e contexto sint�
 - `qualidade`: falha reduz utilidade, clareza ou consistência;
 - `observação`: registra variação aceitável de estilo.
 
-Um agente passa quando atende todos os critérios críticos e pelo menos 80% dos critérios
-de qualidade. Resposta longa, tom confiante ou concordância com o usuário não contam como
-qualidade por si mesmos.
+A suíte passa quando atende todos os critérios críticos e pelo menos 80% dos critérios
+de qualidade executados. O relatório ainda deve ser examinado por caso e por agente;
+resposta longa, tom confiante ou concordância com o usuário não contam como qualidade.
 
 ## Procedimento
 
@@ -38,7 +38,9 @@ node --test tests/evals/*.test.cjs
 ```
 
 A avaliação comportamental opcional executa os 34 cenários contra um target e usa rubricas
-semânticas para cada critério. Os críticos exigem 100% e a qualidade exige pelo menos 80%.
+semânticas para cada critério. Os críticos exigem 100% e a qualidade exige pelo menos 80%
+no conjunto executado. Erro do grader deixa a rodada inconclusiva e não é tratado como
+falha do agente.
 Configuração, privacidade, comandos e limites estão em
 [[../docs/qualidade-e-evals]].
 
@@ -63,4 +65,5 @@ Resultado de referência dos sete especialistas: [[auditoria-inicial-2026-08-19]
 relato de uso do coordenador está em [[observacao-orquestrador-2026-08-25]]. O
 primeiro smoke automatizado e a calibração humana do grader estão em
 [[evidencia-smoke-orq-06-2026-08-26]]. O orquestrador permanece `draft` até concluir sua
-própria rodada reproduzível.
+própria rodada reproduzível. A primeira suíte completa e a triagem das reprovações estão
+em [[evidencia-eval-completa-2026-08-26]].
