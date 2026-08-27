@@ -17,13 +17,16 @@ pontual ou com continuidade por registros privados locais.
 
 ## Comece aqui
 
-1. Abra [[00-inicio]].
-2. Descreva o objetivo ao [[agents/orquestrador-pessoal]] ou escolha diretamente um
-   especialista em [[agents/catalogo]].
-3. Anexe o agente escolhido à ferramenta de IA.
-4. Opcionalmente, copie `context/contexto-pessoal.template.md` para
-   `.private/contexto-pessoal.md` e preencha apenas o necessário.
-5. Autorize somente o contexto relevante e revise a resposta antes de agir.
+1. Abra o guia [00-inicio.md](00-inicio.md).
+2. Use o [orquestrador pessoal](agents/orquestrador-pessoal.md) para identificar o agente
+   mais adequado ou escolha diretamente um especialista no [catálogo](agents/catalogo.md).
+3. Adicione o arquivo escolhido às instruções de sua ferramenta de IA, como ChatGPT/GPT,
+   Claude, GitHub Copilot ou outra ferramenta compatível com Markdown.
+4. Para ter continuidade entre sessões, copie opcionalmente o modelo
+   [contexto-pessoal.template.md](context/contexto-pessoal.template.md) para
+   `.private/contexto-pessoal.md` e registre somente o necessário.
+5. Autorize apenas o contexto relevante para cada sessão e revise a resposta antes de
+   transformá-la em decisão ou ação.
 
 Você não precisa criar contexto privado para experimentar. O projeto funciona em dois
 modos:
