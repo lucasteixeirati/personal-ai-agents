@@ -1,7 +1,7 @@
 ---
 title: Checklist de publicação
 status: active
-updated: 2026-08-25
+updated: 2026-08-27
 tags: [publicacao, github, release, comunidade]
 ---
 
@@ -12,9 +12,9 @@ Use esta lista antes de tornar o repositório público e antes de cada divulgaç
 ## Bloqueadores
 
 - [x] escolher e adicionar a licença MIT em `LICENSE`;
-- [ ] revisar todo o histórico do Git em busca de dados pessoais ou segredos;
+- [x] revisar todo o histórico do Git em busca de dados pessoais ou segredos;
 - [x] executar os seis casos do orquestrador na ferramenta de referência;
-- [ ] arquivar runtime, modelo, respostas e decisão por critério dos seis casos;
+- [x] arquivar runtime, modelo, respostas e decisão por critério dos seis casos;
 - [x] confirmar que a matriz do GitHub Actions passa em Windows, Linux e macOS;
 - [x] habilitar o relato privado de vulnerabilidades no GitHub;
 - [x] revisar README, limites profissionais e guia de dados privados como uma pessoa nova.
@@ -32,9 +32,9 @@ Use esta lista antes de tornar o repositório público e antes de cada divulgaç
 
 ## Release inicial
 
-- [ ] definir uma versão do produto separada das versões individuais dos agentes;
-- [ ] criar tag e release de prévia enquanto o orquestrador permanecer em `draft`;
-- [ ] resumir capacidades, ferramentas testadas, limitações e riscos conhecidos;
+- [x] definir uma versão do produto separada das versões individuais dos agentes;
+- [x] criar release de prévia e promover a versão estável após validar o orquestrador;
+- [x] resumir capacidades, ferramentas testadas, limitações e riscos conhecidos;
 - [ ] executar o workflow comportamental e anexar seus artefatos à release;
 - [ ] anexar ou apontar instruções claras para baixar via ZIP ou clonar com Git;
 - [ ] informar que `.private/` nunca deve ser enviado ao GitHub;

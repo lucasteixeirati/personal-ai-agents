@@ -64,6 +64,7 @@ publicar nova versão do conjunto, execute todos os casos e registre o resultado
 Resultado de referência dos sete especialistas: [[auditoria-inicial-2026-08-19]]. O
 relato de uso do coordenador está em [[observacao-orquestrador-2026-08-25]]. O
 primeiro smoke automatizado e a calibração humana do grader estão em
-[[evidencia-smoke-orq-06-2026-08-26]]. O orquestrador permanece `draft` até concluir sua
-própria rodada reproduzível. A primeira suíte completa e a triagem das reprovações estão
-em [[evidencia-eval-completa-2026-08-26]].
+[[evidencia-smoke-orq-06-2026-08-26]]. A suíte completa, sua triagem e a rodada de release
+com três repetições estão em [[evidencia-eval-completa-2026-08-26]]. Depois da aprovação
+automatizada e da exploração humana dos oito agentes, o orquestrador foi promovido para
+`active` na versão estável do produto.

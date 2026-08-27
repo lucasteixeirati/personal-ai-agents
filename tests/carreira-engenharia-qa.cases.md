@@ -1,6 +1,6 @@
 ---
 agent: carreira-engenharia-qa
-agent_version: 0.4.2
+agent_version: 0.4.4
 tags: [teste, carreira, quality-engineering]
 ---
 

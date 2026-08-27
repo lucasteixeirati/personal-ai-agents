@@ -1,8 +1,8 @@
 ---
 title: Qualidade e avaliação dos agentes
 status: active
-version: 1.1.0
-updated: 2026-08-26
+version: 1.2.0
+updated: 2026-08-27
 tags: [qualidade, testes, evals, agentes-pessoais]
 ---
 
@@ -139,3 +139,6 @@ release: resultados automáticos podem conter texto inesperado produzido pelo mo
 
 A primeira rodada completa automatizada e sua triagem humana estão registradas em
 `tests/evidencia-eval-completa-2026-08-26.md`.
+
+As conclusões consolidadas sobre não determinismo, cobertura, regressão e validação humana
+estão em `docs/licoes-aprendidas-testes-agentes.md`.

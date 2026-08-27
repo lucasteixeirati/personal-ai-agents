@@ -1,6 +1,6 @@
 ---
 agent: professor-de-ingles
-agent_version: 0.5.1
+agent_version: 0.5.2
 tags: [teste, ingles]
 ---
 

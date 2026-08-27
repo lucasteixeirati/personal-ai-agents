@@ -143,16 +143,17 @@ Os gates públicos exigem 100% dos critérios críticos e pelo menos 80% dos cri
 qualidade no conjunto executado. Falhas de formato do avaliador são marcadas como execução
 inconclusiva, e o workflow permite repetir apenas os casos afetados antes da suíte completa.
 
-A avaliação completa mais recente cobre os oito agentes e seus 34 cenários. Suas duas
-falhas críticas finais foram corrigidas e passaram em três repetições direcionadas; todos
-os cenários dos dois agentes afetados também passaram na regressão. A promoção da release
-ainda depende de uma nova suíte completa. O orquestrador permanece em `draft` até o
-conjunto demonstrar estabilidade. As versões podem ser diferentes porque cada agente
-evolui e é testado de forma independente.
+A avaliação local de release mais recente cobre os oito agentes e repete seus 34 cenários
+três vezes: 102/102 casos, 132/132 critérios críticos e 87,32% dos critérios de qualidade
+passaram, sem erro de provedor. O resultado está registrado em
+[[tests/evidencia-eval-completa-2026-08-26]]. A validação exploratória do mantenedor também
+confirmou utilidade, continuidade e controle nos oito agentes, permitindo promover o
+orquestrador para `active`. As versões podem ser diferentes porque cada agente evolui e é
+testado de forma independente.
 
 ## Estado
 
-Versão beta com um coordenador em `draft` e sete especialistas ativos: finanças
+Versão estável com um coordenador e sete especialistas ativos: finanças
 pessoais, planejamento tributário para IRPF, apoio reflexivo, performance, nutrição e
 musculação, inglês e carreira em Quality Engineering. Eles são pontos de partida
 incrementais, não substitutos de profissionais habilitados.
@@ -163,6 +164,7 @@ incrementais, não substitutos de profissionais habilitados.
 - siga [[CONTRIBUTING]] para propor agentes, casos ou melhorias;
 - respeite [[CODE_OF_CONDUCT]] nos espaços da comunidade;
 - consulte [[CHANGELOG]] para acompanhar as versões;
+- veja [[docs/licoes-aprendidas-testes-agentes]] para conhecer a estratégia e as lições de QA;
 - use [[docs/checklist-publicacao]] antes de releases e divulgação pública.
 
 ## Licença

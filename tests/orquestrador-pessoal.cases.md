@@ -1,6 +1,6 @@
 ---
 agent: orquestrador-pessoal
-agent_version: 0.3.1
+agent_version: 0.3.2
 tags: [teste, orquestracao, roteamento]
 ---
 

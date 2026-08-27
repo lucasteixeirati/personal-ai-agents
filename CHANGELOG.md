@@ -4,6 +4,12 @@ Este arquivo registra mudanças relevantes para quem usa o projeto.
 
 ## Não lançado
 
+Nenhuma alteração registrada.
+
+## 0.1.0 — 2026-08-27
+
+Primeira versão estável para distribuição pública.
+
 ### Qualidade
 
 - casos Markdown passam a alimentar uma avaliação comportamental reproduzível;
@@ -17,6 +23,13 @@ Este arquivo registra mudanças relevantes para quem usa o projeto.
 - primeira suíte completa registra 34 casos, triagem humana e ajustes patch dos oito agentes;
 - carreira impede que impactos qualitativos não comprovados substituam métricas inventadas;
 - finanças evita linguagem temporal urgente fora de riscos objetivos de contenção;
+- seis regressões intermitentes da rodada de release recebem contratos de resposta mais
+  explícitos, sem afrouxamento dos critérios críticos;
+- suíte local de release passa 102/102 casos, 132/132 críticos e 87,32% de qualidade em
+  três repetições, sem erro de provedor;
+- teste exploratório humano confirma utilidade e controle nos oito agentes, incluindo
+  continuidade, orientação financeira e tributária, saúde e hábitos, reflexão, inglês e
+  planejamento de performance, sem registrar conteúdo pessoal;
 - metodologia, limites e proteção dos resultados estão documentados.
 
 ## 0.1.0-beta.1 — 2026-08-26

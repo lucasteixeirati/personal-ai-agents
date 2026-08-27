@@ -1,6 +1,6 @@
 ---
 agent: nutricao-e-habitos
-agent_version: 0.4.3
+agent_version: 0.4.4
 tags: [teste, nutricao, musculacao]
 ---
 
