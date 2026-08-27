@@ -2,8 +2,9 @@
 
 [![Validate repository](https://github.com/lucasteixeirati/personal-ai-agents/actions/workflows/validate.yml/badge.svg)](https://github.com/lucasteixeirati/personal-ai-agents/actions/workflows/validate.yml)
 
-Biblioteca pessoal de agentes em Markdown, projetada para funcionar como vault do
-Obsidian e como fonte portátil de instruções para diferentes ferramentas de IA.
+Conjunto portátil de agentes pessoais em Markdown, compatível com Obsidian e diferentes
+ferramentas de IA. Os agentes são independentes de fornecedor e podem ser usados de forma
+pontual ou com continuidade por registros privados locais.
 
 ## Princípios
 
@@ -11,7 +12,7 @@ Obsidian e como fonte portátil de instruções para diferentes ferramentas de I
 - fatos, hipóteses e recomendações devem ser distinguidos;
 - contexto ausente deve gerar perguntas curtas, não suposições silenciosas;
 - saúde, finanças e segurança exigem limites explícitos;
-- nenhum agente pode executar transações ou falar em nome do usuário sem autorização;
+- nenhum agente executa transações nem fala em nome da pessoa;
 - memória pessoal sensível fica em `.private/`, ignorada pelo Git.
 
 ## Comece aqui
@@ -19,10 +20,10 @@ Obsidian e como fonte portátil de instruções para diferentes ferramentas de I
 1. Abra [[00-inicio]].
 2. Descreva o objetivo ao [[agents/orquestrador-pessoal]] ou escolha diretamente um
    especialista em [[agents/catalogo]].
-3. Copie `context/contexto-pessoal.template.md` para
+3. Anexe o agente escolhido à ferramenta de IA.
+4. Opcionalmente, copie `context/contexto-pessoal.template.md` para
    `.private/contexto-pessoal.md` e preencha apenas o necessário.
-4. Anexe o agente escolhido e o contexto relevante à ferramenta de IA.
-5. Revise a resposta antes de transformá-la em decisão ou ação.
+5. Autorize somente o contexto relevante e revise a resposta antes de agir.
 
 Você não precisa criar contexto privado para experimentar. O projeto funciona em dois
 modos:
@@ -144,7 +145,7 @@ qualidade no conjunto executado. Falhas de formato do avaliador são marcadas co
 inconclusiva, e o workflow permite repetir apenas os casos afetados antes da suíte completa.
 
 A avaliação local de release mais recente cobre os oito agentes e repete seus 34 cenários
-três vezes: 102/102 casos, 132/132 critérios críticos e 87,32% dos critérios de qualidade
+três vezes: 102/102 execuções, 132/132 critérios críticos e 87,32% dos critérios de qualidade
 passaram, sem erro de provedor. O resultado está registrado em
 [[tests/evidencia-eval-completa-2026-08-26]]. A validação exploratória do mantenedor também
 confirmou utilidade, continuidade e controle nos oito agentes, permitindo promover o

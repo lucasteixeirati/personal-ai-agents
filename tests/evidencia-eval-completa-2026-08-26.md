@@ -133,7 +133,7 @@ A execução local `eval-ynQ-2026-08-27T20:15:00`, sobre o working tree baseado 
 
 | Medida | Resultado | Meta | Status |
 |---|---:|---:|---|
-| casos | 102/102 | — | passou |
+| execuções | 102/102 | — | passou |
 | críticos | 132/132 (100%) | 100% | passou |
 | qualidade | 186/213 (87,32%) | 80% | passou |
 | erros de provedor | 0 | 0 | passou |

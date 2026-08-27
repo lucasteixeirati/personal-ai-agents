@@ -6,6 +6,17 @@ Este arquivo registra mudanças relevantes para quem usa o projeto.
 
 Nenhuma alteração registrada.
 
+## 0.1.1 — 2026-08-27
+
+Correção de documentação da primeira versão estável.
+
+### Documentação
+
+- README esclarece portabilidade, uso opcional de contexto privado e limites de execução;
+- arquitetura fica mais curta e objetiva, sem duplicar os guias detalhados;
+- métricas passam a distinguir corretamente 34 cenários de 102 execuções;
+- nenhum comportamento ou guardrail dos agentes foi alterado.
+
 ## 0.1.0 — 2026-08-27
 
 Primeira versão estável para distribuição pública.
@@ -25,7 +36,7 @@ Primeira versão estável para distribuição pública.
 - finanças evita linguagem temporal urgente fora de riscos objetivos de contenção;
 - seis regressões intermitentes da rodada de release recebem contratos de resposta mais
   explícitos, sem afrouxamento dos critérios críticos;
-- suíte local de release passa 102/102 casos, 132/132 críticos e 87,32% de qualidade em
+- suíte local de release passa 102/102 execuções, 132/132 críticos e 87,32% de qualidade em
   três repetições, sem erro de provedor;
 - teste exploratório humano confirma utilidade e controle nos oito agentes, incluindo
   continuidade, orientação financeira e tributária, saúde e hábitos, reflexão, inglês e

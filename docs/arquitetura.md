@@ -1,129 +1,88 @@
 ---
 title: Arquitetura do Personal AI Agents
 status: living-document
-version: 1.2.0
-updated: 2026-08-26
+version: 1.3.0
+updated: 2026-08-27
 tags: [agentes-pessoais, arquitetura, seguranca, portabilidade]
 ---
 
 # Arquitetura do Personal AI Agents
 
-O Personal AI Agents é uma biblioteca de agentes pessoais em Markdown. Não é uma
-aplicação com backend: os arquivos definem comportamento, limites e formas de uso para
-diferentes ferramentas de IA.
+O projeto é um conjunto de agentes em Markdown, não uma aplicação com backend. A ferramenta
+de IA interpreta os arquivos; a pessoa fornece contexto, controla permissões e mantém a
+decisão final.
 
 ## Visão geral
 
 ```mermaid
 flowchart LR
-    U[Pessoa usuária]
-    I[Adaptador da ferramenta]
-    O[Orquestrador]
-    A[Agente especialista]
-    P[Contexto privado local]
-    Q[Templates e testes]
-
-    U -->|objetivo| I
-    I -->|uso assistido| O
-    I -->|uso direto| A
+    U[Pessoa] --> I[Adaptador da ferramenta]
+    I -->|uso assistido| O[Orquestrador]
+    I -->|uso direto| A[Especialista]
     O -->|seleciona| A
-    P -.->|somente com autorização| A
-    A -->|orientação| U
-    Q -.->|padroniza e valida| O
-    Q -.->|padroniza e valida| A
+    P[Contexto privado] -.->|com autorização| A
+    A --> R[Orientação para a pessoa]
+    T[Templates e testes] -.-> O
+    T -.-> A
 ```
-
-A ferramenta de IA executa as instruções. A pessoa fornece o contexto, autoriza dados
-privados e continua responsável pelas decisões.
 
 ## Componentes
 
-| Componente | Responsabilidade |
+| Componente | Função |
 |---|---|
-| [[../agents/orquestrador-pessoal]] | identificar o objetivo e selecionar o especialista adequado |
-| [[../agents/catalogo]] | listar especialidades e limites principais |
-| `agents/*.md` | definir comportamento e guardrails de cada especialista |
-| `AGENTS.md`, `CLAUDE.md` e `.github/` | adaptar o projeto às convenções de cada ferramenta |
-| [[../adapters/instrucoes-genericas]] | permitir uso manual em qualquer ferramenta de IA |
-| [[../context/contexto-pessoal.template]] | orientar a criação de contexto pessoal mínimo |
-| [[../context/fonte-de-contexto.template]] | inventariar fontes privadas por especialidade |
-| `.private/` | guardar contexto pessoal local e opcional, fora do Git |
-| [[../sessions/registro-de-sessao.template]] | registrar decisões e continuidade entre sessões |
-| [[../tests/README]] | definir casos e critérios de comportamento esperado |
-| [[qualidade-e-evals]] | executar validação estática e avaliação comportamental reproduzível |
+| `agents/orquestrador-pessoal.md` | identificar o objetivo e selecionar o especialista |
+| `agents/*.md` | definir especialidade, comportamento e guardrails |
+| `AGENTS.md`, `CLAUDE.md` e `.github/` | adaptar a entrada às ferramentas compatíveis |
+| `adapters/` | permitir uso manual em outras ferramentas de IA |
+| `context/` e `sessions/` | oferecer modelos sem dados pessoais reais |
+| `.private/` | guardar registros locais opcionais, fora do Git |
+| `tests/` | validar estrutura e comportamento esperado |
+
+## Fluxo
+
+1. A pessoa descreve um objetivo ao orquestrador ou escolhe um especialista.
+2. A ferramenta carrega somente as instruções necessárias.
+3. Se houver contexto privado útil, o agente informa fonte, finalidade, escopo e sessão.
+4. A pessoa autoriza, limita ou recusa a leitura.
+5. O especialista responde com limites e origem do contexto preservados.
+
+Se a ferramenta oferecer subagentes reais, o orquestrador pode delegar tarefas. Caso não
+ofereça, ele coordena os especialistas na mesma conversa sem alegar execução inexistente.
 
 ## Modos de uso
 
-### Direto
+- **Direto:** a pessoa escolhe um especialista.
+- **Assistido:** o orquestrador seleciona o agente principal e, quando necessário, um
+  complementar autorizado.
+- **Com continuidade:** registros privados permitem comparar períodos e retomar decisões.
 
-A pessoa escolhe um especialista e carrega somente seu arquivo. É o modo mais simples
-quando o domínio já está claro.
+## Privacidade e segurança
 
-### Assistido
+O uso de `.private/` é opcional e nunca automático. A autorização vale apenas para as
+fontes, finalidade, escopo e sessão informados. O diretório é ignorado pelo Git, mas não é
+criptografado; proteção do dispositivo, backups e retenção da ferramenta continuam sob
+responsabilidade da pessoa.
 
-O orquestrador recebe o objetivo, seleciona o especialista principal e pode consultar
-um complementar quando outro domínio realmente mudar a decisão.
+Os agentes não recebem credenciais, não executam transações e não substituem profissionais
+habilitados. Guardrails são proporcionais ao risco de cada especialidade.
 
-### Com continuidade
+## Portabilidade e qualidade
 
-A pessoa mantém registros privados e autoriza fontes específicas quando deseja retomar
-decisões, comparar períodos ou acompanhar evolução. As fontes podem incluir planilhas,
-resumos, exames organizados por data, metas, planos de estudo e sessões anteriores.
+O núcleo usa Markdown e frontmatter YAML simples, sem dependência de fornecedor. Cada
+agente possui versão própria e cenários correspondentes. A validação estática roda em
+Windows, Linux e macOS; a avaliação comportamental opcional registra modelo, grader,
+commit e repetições. Nenhum teste lê `.private/`.
 
-Se a ferramenta oferecer subagentes reais, o orquestrador pode delegar tarefas. Caso
-contrário, a coordenação acontece na mesma conversa e deve ser apresentada dessa forma.
+Detalhes de uso e manutenção:
 
-## Contexto privado
-
-O uso de `.private/` é opcional. Na primeira experiência, o orquestrador informa que a
-pessoa pode trabalhar sem histórico ou usar registros privados para continuidade.
-
-Antes de qualquer leitura, o agente deve informar:
-
-- arquivo ou conjunto de arquivos;
-- finalidade;
-- especialista que receberá o contexto;
-- escopo e sessão da autorização.
-
-A autorização não é permanente e não vale automaticamente para outro agente, finalidade
-ou sessão. Estar listado no índice de fontes também não autoriza leitura.
-
-`.private/` é ignorado pelo Git, mas não é criptografado. Dados pessoais devem ser
-protegidos no dispositivo, nos backups e nas configurações de retenção da ferramenta de
-IA. Senhas, tokens, chaves, códigos de acesso e identificadores completos não devem ser
-armazenados no projeto.
-
-Planilhas, relatórios e outros artefatos com dados pessoais devem permanecer em
-`.private/` ou em armazenamento externo adequado. Veja
-[[contexto-privado-e-continuidade]] e [[../SECURITY]].
-
-## Princípios
-
-- `portabilidade`: núcleo em Markdown e YAML simples;
-- `independência`: agentes não dependem de um fornecedor de IA;
-- `privacidade`: contexto mínimo e autorização explícita;
-- `segurança`: guardrails proporcionais ao risco de cada especialidade;
-- `autonomia`: a pessoa confirma decisões e ações relevantes;
-- `rastreabilidade`: versões de agentes e casos de teste evoluem juntas.
+- [[contexto-privado-e-continuidade]]
+- [[qualidade-e-evals]]
+- [[licoes-aprendidas-testes-agentes]]
+- [[checklist-publicacao]]
+- [[../SECURITY]]
 
 ## Limites
 
-O projeto não fornece modelo de IA, backend, banco de dados, criptografia, sincronização
-ou backup. Também não substitui profissionais habilitados nem controla memória, retenção
-ou uso de dados pelas ferramentas externas.
-
-## Validação e manutenção
-
-O script `tests/validate.ps1` verifica agentes, frontmatter, versões, casos e links. O
-workflow `.github/workflows/validate.yml` executa a validação em Windows, Linux e macOS.
-Os mesmos casos Markdown alimentam a avaliação comportamental opcional; target, grader,
-commit e repetições fazem parte da evidência. Nenhum eval lê `.private/`.
-
-Ao alterar um agente, atualize sua versão e seus casos, preserve os guardrails e não
-inclua dados pessoais reais. Pendências de release e divulgação ficam em
-[[checklist-publicacao]].
-
-## Referências
-
-- [C4 Model](https://c4model.com/) — inspiração para o diagrama;
-- [OWASP Top 10 for LLM and GenAI](https://genai.owasp.org/initiatives/top-10-for-llm-and-genai/) — referência de segurança.
+O projeto não fornece modelo de IA, backend, banco de dados, criptografia, sincronização ou
+backup. O comportamento também depende do modelo, da ferramenta, do contexto e das
+permissões disponíveis.
