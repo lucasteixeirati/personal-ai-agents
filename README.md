@@ -53,10 +53,10 @@ O orquestrador informa essa possibilidade na primeira experiência. Nenhum agent
 usar, para qual finalidade e com qual especialista, e pedir sua autorização. A permissão
 não é permanente e pode ser recusada ou limitada.
 
-Comece com [[context/contexto-pessoal.template]] e use
-[[context/fonte-de-contexto.template]] para inventariar planilhas, relatórios, registros
-e outras fontes sem copiar segredos para o índice. Veja o guia completo em
-[[docs/contexto-privado-e-continuidade]].
+Comece com o [modelo de contexto pessoal](context/contexto-pessoal.template.md) e use o
+[modelo de fonte de contexto](context/fonte-de-contexto.template.md) para inventariar
+planilhas, relatórios, registros e outras fontes sem copiar segredos para o índice. Veja o
+[guia de contexto privado e continuidade](docs/contexto-privado-e-continuidade.md).
 
 > [!CAUTION]
 > `.private/` é ignorado pelo Git, mas não é criptografado. Proteja o dispositivo, revise
@@ -97,10 +97,10 @@ comece com dados sintéticos e só depois crie registros pessoais locais mínimo
 
 ## Orquestração e ferramentas
 
-O [[agents/orquestrador-pessoal]] funciona como entrada assistida: identifica o objetivo,
-seleciona um especialista principal e pode integrar um segundo domínio quando isso mudar
-a decisão. Ele funciona tanto em uma única conversa quanto com subagentes reais, sem
-afirmar delegação quando a ferramenta não oferecer essa capacidade.
+O [orquestrador pessoal](agents/orquestrador-pessoal.md) funciona como entrada assistida:
+identifica o objetivo, seleciona um especialista principal e pode integrar um segundo
+domínio quando isso mudar a decisão. Ele funciona tanto em uma única conversa quanto com
+subagentes reais, sem afirmar delegação quando a ferramenta não oferecer essa capacidade.
 
 Pontos de entrada incluídos:
 
@@ -109,18 +109,18 @@ Pontos de entrada incluídos:
 | Codex e ferramentas compatíveis | `AGENTS.md` |
 | Claude Code | `CLAUDE.md` |
 | GitHub Copilot | `.github/copilot-instructions.md` |
-| ChatGPT e outras ferramentas | [[adapters/instrucoes-genericas]] |
+| ChatGPT e outras ferramentas | [instruções genéricas](adapters/instrucoes-genericas.md) |
 
-Nenhum adaptador carrega `.private/` automaticamente. Veja [[docs/arquitetura]] para o
-protocolo de roteamento, os modos manual, assistido e multiagente e os limites de confiança.
-Para continuidade e proteção das fontes locais, veja
-[[docs/contexto-privado-e-continuidade]].
+Nenhum adaptador carrega `.private/` automaticamente. Veja a
+[arquitetura](docs/arquitetura.md) para o protocolo de roteamento, os modos manual,
+assistido e multiagente e os limites de confiança. Para continuidade e proteção das fontes
+locais, consulte o [guia de contexto privado](docs/contexto-privado-e-continuidade.md).
 
 ## Avaliação
 
-Os casos em [[tests/README]] verificam limites críticos, qualidade da orientação,
-memória, fontes e confronto construtivo. Execute-os novamente após mudanças relevantes
-no agente ou na ferramenta de IA utilizada.
+Os casos descritos na [documentação de testes](tests/README.md) verificam limites críticos,
+qualidade da orientação, memória, fontes e confronto construtivo. Execute-os novamente
+após mudanças relevantes no agente ou na ferramenta de IA utilizada.
 
 Para validar a estrutura, as versões e os links no Windows:
 
@@ -140,8 +140,9 @@ seus critérios podem ser convertidos para a suíte automatizada.
 
 A avaliação comportamental usa os próprios arquivos Markdown como fonte, aceita provedores
 configuráveis e gera relatórios JSON, HTML e JUnit. Ela é opcional porque consome API e
-suas respostas variam conforme modelo e runtime. Veja [[docs/qualidade-e-evals]] para
-executar localmente ou pelo workflow manual `Behavioral evaluation`.
+suas respostas variam conforme modelo e runtime. Veja o guia de
+[qualidade e avaliações](docs/qualidade-e-evals.md) para executar localmente ou pelo
+workflow manual `Behavioral evaluation`.
 
 Os gates públicos exigem 100% dos critérios críticos e pelo menos 80% dos critérios de
 qualidade no conjunto executado. Falhas de formato do avaliador são marcadas como execução
@@ -149,11 +150,11 @@ inconclusiva, e o workflow permite repetir apenas os casos afetados antes da su�
 
 A avaliação local de release mais recente cobre os oito agentes e repete seus 34 cenários
 três vezes: 102/102 execuções, 132/132 critérios críticos e 87,32% dos critérios de qualidade
-passaram, sem erro de provedor. O resultado está registrado em
-[[tests/evidencia-eval-completa-2026-08-26]]. A validação exploratória do mantenedor também
-confirmou utilidade, continuidade e controle nos oito agentes, permitindo promover o
-orquestrador para `active`. As versões podem ser diferentes porque cada agente evolui e é
-testado de forma independente.
+passaram, sem erro de provedor. Consulte a
+[evidência da avaliação completa](tests/evidencia-eval-completa-2026-08-26.md). A validação
+exploratória do mantenedor também confirmou utilidade, continuidade e controle nos oito
+agentes, permitindo promover o orquestrador para `active`. As versões podem ser diferentes
+porque cada agente evolui e é testado de forma independente.
 
 ## Estado
 
@@ -164,12 +165,14 @@ incrementais, não substitutos de profissionais habilitados.
 
 ## Segurança, contribuição e publicação
 
-- leia [[SECURITY]] antes de usar dados pessoais ou relatar uma vulnerabilidade;
-- siga [[CONTRIBUTING]] para propor agentes, casos ou melhorias;
-- respeite [[CODE_OF_CONDUCT]] nos espaços da comunidade;
-- consulte [[CHANGELOG]] para acompanhar as versões;
-- veja [[docs/licoes-aprendidas-testes-agentes]] para conhecer a estratégia e as lições de QA;
-- use [[docs/checklist-publicacao]] antes de releases e divulgação pública.
+- leia a [política de segurança](SECURITY.md) antes de usar dados pessoais ou relatar uma
+  vulnerabilidade;
+- siga o [guia de contribuição](CONTRIBUTING.md) para propor agentes, casos ou melhorias;
+- respeite o [código de conduta](CODE_OF_CONDUCT.md) nos espaços da comunidade;
+- consulte o [changelog](CHANGELOG.md) para acompanhar as versões;
+- conheça a [estratégia e as lições de QA](docs/licoes-aprendidas-testes-agentes.md);
+- use o [checklist de publicação](docs/checklist-publicacao.md) antes de releases e
+  divulgação pública.
 
 ## Licença
 
